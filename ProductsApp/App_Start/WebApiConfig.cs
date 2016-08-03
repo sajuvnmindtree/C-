@@ -11,7 +11,7 @@ namespace ProductsApp
         {
             // Web API configuration and services
 
-            // Web API routes
+            // route will be something like - api/products/controller/id
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
