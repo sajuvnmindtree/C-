@@ -45,7 +45,7 @@
 
         function find() {
             var id = $('#prodId').val();
-            $.getJSON(uri + '/' + id)
+            $.getJSON(uri + '/'+'getproduct'+'/' + id)
                 .done(function (data) {
                     $('#product').text(formatItem(data));
                 })
@@ -55,7 +55,7 @@
         }
 
         function GetHierarchy() {
-            var urihierarchy = 'api/hierarchy/1';
+            var urihierarchy = 'api/products/hierarchy/1';
                    
                 // Send an AJAX request
                 $.getJSON(urihierarchy)
@@ -63,7 +63,7 @@
                         // On success, 'data' contains a list of products.
                         $.each(data, function (key, item) {
                             // Add a list item for the product.
-                            $('<li>', { text: formatItem(item) }).appendTo($('#products'));
+                            $('<li>', { text: item.Title }).appendTo($('#products'));
                         });
                     });
             }
