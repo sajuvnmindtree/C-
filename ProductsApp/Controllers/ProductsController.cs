@@ -30,5 +30,17 @@ namespace ProductsApp.Controllers
             }
             return Ok(product);
         }
+
+        [HttpGet]
+        public string ReturnOK(int id)
+        {
+            return id.ToString();
+        }
+
+        [HttpGet]
+        public List<HierarchyInfo> Hierarchy(int id)
+        {
+            return HierarchyInfo.TestGetLocations();
+        }
     }
 }
